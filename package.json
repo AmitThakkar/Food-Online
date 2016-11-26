@@ -1,0 +1,26 @@
+{
+  "name": "food-online",
+  "version": "1.0.0",
+  "description": "This is sample food online application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmitThakkar/Food-Online.git"
+  },
+  "keywords": [
+    "Angular2",
+    "TypeScript",
+    "NPM",
+    "Food",
+    "Online"
+  ],
+  "author": "AmitThakkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmitThakkar/Food-Online/issues"
+  },
+  "homepage": "https://github.com/AmitThakkar/Food-Online#readme"
+}
