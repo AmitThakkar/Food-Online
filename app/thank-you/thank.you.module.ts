@@ -1,15 +1,15 @@
 /**
- * Created by AmitThakkar on 9/28/2016.
+ * Created by AmitThakkar on 11/26/2016.
  */
 import {NgModule}       from '@angular/core';
 import {CommonModule}   from '@angular/common';
 import {ThankYouComponent}    from './thank.you.component';
-import {THANK_YOU_ROUTING} from "./thank.you.routing";
+import {ThankYouRoutingModule} from "./thank.you.routing.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        THANK_YOU_ROUTING
+        ThankYouRoutingModule
     ],
     declarations: [
         ThankYouComponent

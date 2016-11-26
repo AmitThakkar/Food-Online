@@ -1,18 +1,18 @@
 /**
- * Created by AmitThakkar on 9/28/2016.
+ * Created by AmitThakkar on 11/26/2016.
  */
 import {NgModule}       from '@angular/core';
 import {CommonModule}   from '@angular/common';
 import {CheckoutComponent}    from './checkout.component';
-import {CHECKOUT_ROUTING} from "./checkout.routing";
+import {CheckoutRoutingModule} from "./checkout.routing.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        CHECKOUT_ROUTING
+        CheckoutRoutingModule
     ],
     declarations: [
-        CheckoutComponent,
+        CheckoutComponent
     ]
 })
 export class CheckoutModule {
