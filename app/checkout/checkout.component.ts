@@ -4,10 +4,8 @@
 import {Component} from '@angular/core';
 
 @Component({
-    template: `
-    <h2>Checkout</h2>
-    <router-outlet></router-outlet>
-  `,
+    moduleId: module.id,
+    templateUrl: './checkout.html'
 })
 export class CheckoutComponent {
 }
