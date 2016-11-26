@@ -2,6 +2,7 @@
 Menu
 
 South Indian
+<hr/>
 <table>
     <tr>
         <td></td>
@@ -14,12 +15,13 @@ South Indian
         <td>{{index + 1}}</td>
         <td>{{southIndianItem.name}}</td>
         <td>Rs. {{southIndianItem.price}}</td>
-        <td>[ + ]</td>
-        <td>[ - ]</td>
+        <td (click)="addItem(southIndianItem)">[ + ]</td>
+        <td (click)="removeItem(southIndianItem)">[ - ]</td>
     </tr>
 </table>
 
 North Indian
+<hr/>
 <table>
     <tr>
         <td></td>
@@ -32,27 +34,29 @@ North Indian
         <td>{{index + 1}}</td>
         <td>{{northIndianItem.name}}</td>
         <td>Rs. {{northIndianItem.price}}</td>
-        <td>[ + ]</td>
-        <td>[ - ]</td>
+        <td (click)="addItem(northIndianItem)">[ + ]</td>
+        <td (click)="removeItem(northIndianItem)">[ - ]</td>
     </tr>
 </table>
 
-Order
-
-<table>
-    <tr>
-        <td>Item name</td>
-        <td>Count</td>
-        <td>Amount</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Samosa [ + ] [ - ]</td>
-        <td>Rs. 20</td>
-    </tr>
-    <tr>
-        <td>Total</td>
-        <td></td>
-        <td>Rs. 20</td>
-    </tr>
-</table>
+<div *ngIf="totalItems > 0">
+    Order
+    <hr/>
+    <table>
+        <tr>
+            <td>Item name</td>
+            <td>Count</td>
+            <td>Amount</td>
+        </tr>
+        <tr *ngFor="let orderItem of orderItems | values">
+            <td>{{orderItem.name}} <span>[ + ]</span> <span>[ - ]</span></td>
+            <td>{{orderItem.quantity}}</td>
+            <td>Rs. {{orderItem.price * orderItem.quantity}}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{totalItems}}</td>
+            <td>Rs. {{totalPrice}}</td>
+        </tr>
+    </table>
+</div>

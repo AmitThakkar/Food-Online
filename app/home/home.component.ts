@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './home.html',
+    templateUrl: './home.html'
 })
 export class HomeComponent {
     public southIndianItems = [
@@ -24,8 +24,26 @@ export class HomeComponent {
         {name: 'Chana Kulcha', price: 80},
         {name: 'Chola Batura', price: 100}
     ];
-    public orders = [];
-    public addItem = function () {
-
-    }
+    public orderItems = {};
+    public totalItems = 0;
+    public totalPrice = 0;
+    public addItem = function (item) {
+        if (!this.orderItems[item.name]) {
+            this.orderItems[item.name] = {quantity: 1, price: item.price, name: item.name};
+        } else {
+            this.orderItems[item.name].quantity++;
+        }
+        this.totalPrice += item.price;
+        this.totalItems++;
+    };
+    public removeItem = function (item) {
+        if (this.orderItems[item.name]) {
+            this.orderItems[item.name].quantity--;
+            if (this.orderItems[item.name].quantity == 0) {
+                delete this.orderItems[item.name];
+            }
+            this.totalItems--;
+            this.totalPrice -= item.price;
+        }
+    };
 }

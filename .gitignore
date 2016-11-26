@@ -23,3 +23,5 @@ app/checkout/*.js
 app/checkout/*.js.map
 app/thank-you/*.js
 app/thank-you/*.js.map
+app/shared/*.js
+app/shared/*.js.map
